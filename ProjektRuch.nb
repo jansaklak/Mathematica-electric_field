@@ -1,0 +1,512 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17711,        504]
+NotebookOptionsPosition[     16498,        476]
+NotebookOutlinePosition[     16890,        492]
+CellTagsIndexPosition[     16847,        489]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"poleElektryczne", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x1_", ",", "y1_"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x2_", ",", "y2_"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"q1_", ",", " ", "q2_"}], "}"}]}], "]"}], "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "r2"}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"r1", "=", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"x", "-", "x1"}], ")"}], "2"], "+", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"y", "-", "y1"}], ")"}], "2"]}]}], ";", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"r2", "=", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"x", "-", "x2"}], ")"}], "2"], "+", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"y", "-", "y2"}], ")"}], "2"]}]}], ";", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          FractionBox[
+           RowBox[{"(", 
+            RowBox[{"q1", " ", 
+             RowBox[{"(", 
+              RowBox[{"x", "-", "x1"}], ")"}]}], ")"}], 
+           SuperscriptBox["r1", 
+            RowBox[{"3", "/", "2"}]]], "+", 
+          FractionBox[
+           RowBox[{"(", 
+            RowBox[{"q2", " ", 
+             RowBox[{"(", 
+              RowBox[{"x", "-", "x2"}], ")"}]}], ")"}], 
+           SuperscriptBox["r2", 
+            RowBox[{"3", "/", "2"}]]]}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"(", 
+            RowBox[{"q1", " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "-", "y1"}], ")"}]}], ")"}], 
+           SuperscriptBox["r1", 
+            RowBox[{"3", "/", "2"}]]], "+", 
+          FractionBox[
+           RowBox[{"(", 
+            RowBox[{"q2", " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "-", "y2"}], ")"}]}], ")"}], 
+           SuperscriptBox["r2", 
+            RowBox[{"3", "/", "2"}]]]}]}], "\[IndentingNewLine]", "\t", 
+        "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{3.883535251762115*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"7d2ecbf5-e4a2-4e32-8b5c-96db5bf1eee4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"p1", ",", " ", 
+    RowBox[{"UpdateInterval", "->", "1"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p1", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"p2", ",", " ", 
+    RowBox[{"UpdateInterval", "->", "1"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"q1", ",", " ", 
+    RowBox[{"UpdateInterval", "->", "1"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q1", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"q2", ",", " ", 
+    RowBox[{"UpdateInterval", "->", "1"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q2", " ", "=", " ", 
+   RowBox[{"-", "1"}]}], ";"}]}], "Input",
+ CellLabel->"In[2]:=",ExpressionUUID->"dc87b0d0-536a-4f0b-8f75-d7b8b22e4cd8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{"{", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", 
+      RowBox[{"Panel", "[", 
+       RowBox[{"Show", "[", 
+        RowBox[{
+         RowBox[{"StreamPlot", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"poleElektryczne", "[", 
+             RowBox[{"p1", ",", " ", "p2", ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"q1", ",", " ", "q2"}], "}"}]}], "]"}], "[", 
+            RowBox[{"x", ",", " ", "y"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", 
+             RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"y", ",", 
+             RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", "2"}], ",", " ", 
+           RowBox[{"Frame", "\[Rule]", "False"}]}], "]"}], ",", 
+         RowBox[{"Graphics", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Locator", "[", 
+              RowBox[{"Dynamic", "[", "p1", "]"}], "]"}], ",", 
+             RowBox[{"Locator", "[", 
+              RowBox[{"Dynamic", "[", "p2", "]"}], "]"}]}], "}"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", "2"}]}], "]"}]}], "]"}], "]"}], 
+      "]"}], "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"Grid", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"Panel", "[", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<q1: \>\"", ",", " ", "Blue", ",", " ", "Medium"}],
+                "]"}], ",", 
+              RowBox[{"InputField", "[", 
+               RowBox[{
+                RowBox[{"Dynamic", "[", "q1", "]"}], ",", 
+                RowBox[{"FieldSize", "->", "4"}]}], "]"}], ",", 
+              RowBox[{"Slider", "[", 
+               RowBox[{
+                RowBox[{"Dynamic", "[", "q1", "]"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "5"}], ",", " ", "5", ",", " ", "0.2"}], 
+                 "}"}]}], "]"}]}], "}"}], "}"}], " ", "]"}], "]"}], 
+         "\[IndentingNewLine]", "}"}], ",", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"Panel", "[", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<q2: \>\"", ",", " ", "Red", ",", " ", "Medium"}], 
+               "]"}], ",", 
+              RowBox[{"InputField", "[", 
+               RowBox[{
+                RowBox[{"Dynamic", "[", "q2", "]"}], ",", 
+                RowBox[{"FieldSize", "->", "4"}]}], "]"}], ",", 
+              RowBox[{"Slider", "[", 
+               RowBox[{
+                RowBox[{"Dynamic", "[", "q2", "]"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "5"}], ",", " ", "5", ",", " ", "0.2"}], 
+                 "}"}]}], "]"}]}], "}"}], "}"}], " ", "]"}], "]"}], 
+         "\[IndentingNewLine]", "}"}]}], "}"}], "]"}]}], "}"}], "}"}], 
+  "]"}]], "Input",
+ CellLabel->"In[10]:=",ExpressionUUID->"f19f0541-1516-4a89-b1da-82e0be46b40c"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     DynamicBox[ToBoxes[
+       Panel[
+        Show[
+         StreamPlot[
+          $CellContext`poleElektryczne[$CellContext`p1, $CellContext`p2, \
+{$CellContext`q1, $CellContext`q2}][$CellContext`x, $CellContext`y], \
+{$CellContext`x, -2, 2}, {$CellContext`y, -2, 2}, PlotRange -> 2, Frame -> 
+          False], 
+         Graphics[{
+           Locator[
+            Dynamic[$CellContext`p1]], 
+           Locator[
+            Dynamic[$CellContext`p2]]}, PlotRange -> 2]]], StandardForm],
+      ImageSizeCache->{380., {187.673828125, 192.326171875}}], 
+     TagBox[GridBox[{
+        {
+         PanelBox[
+          TagBox[GridBox[{
+             {
+              StyleBox["\<\"q1: \"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[0, 0, 1],
+               FrontFaceColor->RGBColor[0, 0, 1],
+               BackFaceColor->RGBColor[0, 0, 1],
+               GraphicsColor->RGBColor[0, 0, 1],
+               FontSize->Medium,
+               FontColor->RGBColor[0, 0, 1]], 
+              InputFieldBox[Dynamic[$CellContext`q1],
+               FieldSize->4], 
+              SliderBox[Dynamic[$CellContext`q1], {-5, 5, 0.2}]}
+            },
+            AutoDelete->False,
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Grid"]]},
+        {
+         PanelBox[
+          TagBox[GridBox[{
+             {
+              StyleBox["\<\"q2: \"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[1, 0, 0],
+               FrontFaceColor->RGBColor[1, 0, 0],
+               BackFaceColor->RGBColor[1, 0, 0],
+               GraphicsColor->RGBColor[1, 0, 0],
+               FontSize->Medium,
+               FontColor->RGBColor[1, 0, 0]], 
+              InputFieldBox[Dynamic[$CellContext`q2],
+               FieldSize->4], 
+              SliderBox[Dynamic[$CellContext`q2], {-5, 5, 0.2}]}
+            },
+            AutoDelete->False,
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           "Grid"]]}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.883535621478763*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"086c5cce-693f-481c-997d-a943fa72c363"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"pole1", "[", 
+    RowBox[{"xp_", ",", "yp_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"poleElektryczne", "[", 
+     RowBox[{"p1", ",", "p2", ",", 
+      RowBox[{"{", 
+       RowBox[{"q1", ",", "q2"}], "}"}]}], "]"}], "[", 
+    RowBox[{"xp", ",", "yp"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"czas", " ", "=", " ", "10."}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"solution", "[", 
+     RowBox[{"xp_", ",", " ", "yp_", ",", " ", "dxp_", ",", " ", "dyp_"}], 
+     "]"}], ":=", " ", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"Join", "[", 
+       RowBox[{
+        RowBox[{"Thread", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"pole1", "[", 
+             RowBox[{
+              RowBox[{"x", "[", "t", "]"}], ",", 
+              RowBox[{"y", "[", "t", "]"}]}], "]"}], "*", "1.0"}], "1.0"], "==",
+           " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", "''"}], "[", "t", "]"}], ",", 
+            RowBox[{
+             RowBox[{"y", "''"}], "[", "t", "]"}]}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "[", "0", "]"}], "==", "xp"}], ",", 
+          RowBox[{
+           RowBox[{"y", "[", "0", "]"}], "==", "yp"}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "'"}], "[", "0", "]"}], "==", "dxp"}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"y", "'"}], "[", "0", "]"}], "==", "dyp"}]}], "}"}]}], 
+       "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0.", ",", "czas"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"xsol", ",", "ysol"}], "}"}], "=", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], "/.", 
+     RowBox[{
+      RowBox[{"solution", "[", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "2"}], ",", "0", ",", "0"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.883535353806093*^9, 3.8835353610703487`*^9}, {
+   3.883535428805386*^9, 3.8835354672445383`*^9}, 3.883535540666007*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"92eef035-f782-4050-b323-d94490100653"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`solution[
+      Pattern[$CellContext`xp, 
+       Blank[]], 
+      Pattern[$CellContext`yp, 
+       Blank[]], 
+      Pattern[$CellContext`dxp, 
+       Blank[]], 
+      Pattern[$CellContext`dyp, 
+       Blank[]]] := NDSolve[
+      Join[
+       Thread[$CellContext`pole1[
+           $CellContext`x[$CellContext`t], 
+           $CellContext`y[$CellContext`t]] 1./1. == {
+          Derivative[2][$CellContext`x][$CellContext`t], 
+          Derivative[2][$CellContext`y][$CellContext`t]}], {$CellContext`x[
+         0] == $CellContext`xp, $CellContext`y[0] == $CellContext`yp, 
+        Derivative[1][$CellContext`x][0] == $CellContext`dxp, 
+        Derivative[1][$CellContext`y][
+         0] == $CellContext`dyp}], {$CellContext`x, $CellContext`y}, \
+{$CellContext`t, 
+       0., $CellContext`czas}]; {$CellContext`xsol, $CellContext`ysol} = 
+    ReplaceAll[{$CellContext`x, $CellContext`y}, 
+      Part[
+       $CellContext`solution[1, -2, 0, 0], 1]], StandardForm],
+  ImageSizeCache->{657.390625, {23., 28.}}]], "Output",
+ CellChangeTimes->{3.8835356267050447`*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"ba5bd6ae-e737-467f-9e8d-742f41fd7888"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"StreamPlot", "[", 
+    RowBox[{
+     RowBox[{"pole1", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "]"}], "]"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"Animate", "[", 
+     RowBox[{
+      RowBox[{"Graphics", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "3"}], ",", 
+              RowBox[{"-", "3"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"3", ",", 
+              RowBox[{"-", "3"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"3", ",", "3"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "3"}], ",", 
+              RowBox[{"-", "3"}]}], "}"}]}], "}"}], "]"}], ",", 
+         RowBox[{"Point", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"xsol", "[", "t", "]"}], ",", 
+            RowBox[{"ysol", "[", "t", "]"}]}], "}"}], "]"}]}], "}"}], "]"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0.", ",", "czas"}], "}"}], ",", 
+      RowBox[{"AnimationRunning", "->", "True"}]}], "]"}], "]"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"xsol", "[", "t", "]"}], ",", 
+      RowBox[{"ysol", "[", "t", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0.", ",", "czas"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.88353557722235*^9, 3.883535587218211*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"1f7701c0-e13d-4a50-aa1a-d19f983eb597"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   StreamPlot[
+    $CellContext`pole1[$CellContext`x, $CellContext`y], {$CellContext`x, -2, 
+     2}, {$CellContext`y, -2, 2}], StandardForm],
+  ImageSizeCache->{360., {177., 182.40234375}}]], "Output",
+ CellChangeTimes->{3.883535628206275*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"0c4d48e4-a813-49d3-abd1-698006ddd738"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   ParametricPlot[{
+     $CellContext`xsol[$CellContext`t], 
+     $CellContext`ysol[$CellContext`t]}, {$CellContext`t, 
+     0., $CellContext`czas}], StandardForm],
+  ImageSizeCache->{360., {141., 146.2275454247955}}]], "Output",
+ CellChangeTimes->{3.883535629696034*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"62f69022-a0b3-422d-96fa-a01856c1e1d7"]
+}, Open  ]]
+},
+WindowSize->{1440., 736.5},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"085bfb03-3ba6-462e-80a0-8052b7da9e73"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2424, 71, 218, "Input",ExpressionUUID->"7d2ecbf5-e4a2-4e32-8b5c-96db5bf1eee4"],
+Cell[2985, 93, 1153, 36, 187, "Input",ExpressionUUID->"dc87b0d0-536a-4f0b-8f75-d7b8b22e4cd8"],
+Cell[CellGroupData[{
+Cell[4163, 133, 3286, 81, 191, "Input",ExpressionUUID->"f19f0541-1516-4a89-b1da-82e0be46b40c"],
+Cell[7452, 216, 2487, 69, 399, "Output",ExpressionUUID->"086c5cce-693f-481c-997d-a943fa72c363"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9976, 290, 2477, 70, 185, "Input",ExpressionUUID->"92eef035-f782-4050-b323-d94490100653"],
+Cell[12456, 362, 1187, 27, 70, "Output",ExpressionUUID->"ba5bd6ae-e737-467f-9e8d-742f41fd7888"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13680, 394, 2053, 60, 71, "Input",ExpressionUUID->"1f7701c0-e13d-4a50-aa1a-d19f983eb597"],
+Cell[15736, 456, 358, 7, 376, "Output",ExpressionUUID->"0c4d48e4-a813-49d3-abd1-698006ddd738"],
+Cell[16097, 465, 385, 8, 304, "Output",ExpressionUUID->"62f69022-a0b3-422d-96fa-a01856c1e1d7"]
+}, Open  ]]
+}
+]
+*)
+
